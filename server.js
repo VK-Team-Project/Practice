@@ -1,14 +1,16 @@
 'use strict';
-
+//
+//const { Client } = require('pg');
 // ================================================================
 // get all the tools we need
 // ================================================================
-var express = require('express');
-// var routes = require('./routes/index.js');
-var port = process.env.PORT || 3000;
+const express = require('express');
+const port = process.env.PORT || 3000;
 
-var app = express();
-
+const app = express();
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); 
 // ================================================================
 // setup our express application
 // ================================================================
@@ -19,8 +21,9 @@ app.set('view engine', 'ejs');
 // ================================================================
 // setup routes
 // ================================================================
-// routes(app);
-
+app.get('/',(req,res) =>{
+    res.json({message: `Hello Allen`})
+})
 // ================================================================
 // start our server
 // ================================================================
