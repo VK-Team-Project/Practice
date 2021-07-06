@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       filename: './data/wishlist.db'
     },
-    useNullAsDefault: true
+    useNullAsDefault: true 
   },
 
   // staging: {
